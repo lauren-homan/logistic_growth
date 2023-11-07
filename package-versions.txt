@@ -1,0 +1,5 @@
+#must install ggplot2, dplyr
+
+sink(file = "package-versions.txt")
+sessionInfo()
+sink()

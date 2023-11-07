@@ -1,6 +1,6 @@
 #Script to plot data and model
 
-growth_data <- read.csv("???")
+growth_data <- read.csv("experiment1.csv")
 
 logistic_fun <- function(t) {
   
@@ -10,18 +10,17 @@ logistic_fun <- function(t) {
   
 }
 
-N0 <- ??? #
+N0 <- 6.903e+00 
   
-r <- ??? #
+r <- 9.990e-03
   
-K <- ??? #
+K <- 5.903e+10
 
-ggplot(aes(???,???), data = growth_data) +
+ggplot(aes(t,N), data = growth_data) +
   
   geom_function(fun=logistic_fun, colour="red") +
   
-  geom_point()
+  geom_point()+
+  scale_y_continuous(trans='log10')
 
-  #scale_y_continuous(trans='log10')
-
-
+#Plotting the model to see how well it fits the data

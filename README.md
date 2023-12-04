@@ -67,3 +67,35 @@ ggplot(aes(t,N), data = growth_data) +
   scale_y_continuous(trans='log10')
 ```
 Here, we have plotted a graph of the raw data, except with a log transformation of the y-axis. 
+
+
+# Script to plot data and model
+Next, we will plot the model and compare it to the raw data in order to determine how accurately our model can predict variables of interest.
+```
+growth_data <- read.csv("experiment1.csv")
+
+logistic_fun <- function(t) {
+  
+  N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+  
+  return(N)
+  
+}
+
+N0 <- 6.903e+00 
+  
+r <- 9.990e-03
+  
+K <- 5.903e+10
+```
+fnowef
+
+```
+ggplot(aes(t,N), data = growth_data) +
+  
+  geom_function(fun=logistic_fun, colour="red") +
+  
+  geom_point()+
+  scale_y_continuous(trans='log10')
+``` 
+#Plotting the model to see how well it fits the data

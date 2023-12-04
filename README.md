@@ -5,7 +5,7 @@ R scripts for a reproducible analysis of logistic growth
 install.packages("dplyr")
 library(dplyr)
 ```
-#### The dplyr package enables us to manipulate data via efficient filtering, grouping and arranging. It will therefore be useful in managing this set of data.
+The dplyr package enables us to manipulate data via efficient filtering, grouping and arranging. It will therefore be useful in managing this set of data.
 ```{r}
 growth_data <- read.csv("experiment1.csv")
 ```
@@ -19,8 +19,8 @@ model1 <- lm(N_log ~ t, data_subset1)
 
 summary(model1)
 ```
-We first want to determine estimates for the carrying capacity, initial population size and the population growth rate. We define a linear model when t is small, and where we expect the growth to be exponential, by filtering the data such that it only includes rows where t is less than 1800. 
-Then, we have log transformed the population size (N) data, because this results in 2 distinct growth stages - an initial linear growth and then a plateau - in order to create 2 separate linear models. We can consequently use this model to determine initial growth rates, as it will provide us with estimates of both the gradient and the y-intercept. When t<1800, the intercept is 6.903e+00, the gradient is 9.990e-03.
+We first want to determine estimates for the carrying capacity, initial population size and the population growth rate. We define a linear model for when t is small, and where we expect the growth to be exponential, by filtering the data such that it only includes rows where t is less than 1800 (beyond this point the growth is expected to plateau, based on the raw data). 
+Then, we have mutated the population size (N) data so that it is log transformed, because this results in 2 distinct growth stages - an initial linear growth and a plateau - in order to create 2 separate linear models. We can consequently use these models to estimate growth rates, carrying capacity and population size as they will provide us with estimates of both the gradient and the y-intercept. For example, when t<1800, the intercept is 6.903e+00, the gradient is 9.990e-03.
 
 # Case 2. N(t) = K
 ```{r}
@@ -30,7 +30,7 @@ model2 <- lm(N ~ 1, data_subset2)
 
 summary(model2)
 ```
-#### Here, we are defining the linear model according to values of t which exceed 1800, at which point growth is no longer exponential and begins to plateau. We filter the data initially 
+Next, we want to create a model for the stage of growth where we expect to observe a plateau, hence have filtered the data to only include values of t greater than 1800. We require 2 separate linear models because we predict there to be 2 distinct growth stages, each of which will have a different rate of growth.
 
 
 # Script to plot the logistic growth data
@@ -46,20 +46,21 @@ ggplot(aes(t,N), data = growth_data) +
   
   xlab("t") +
   
-  ylab("y") +
+  ylab("N") +
   
   theme_bw()
 ```
-#### PLot data
-#### This chunk of code plots a graph of our raw data, without a log-transformation on the y-axis. 
+This chunk of code plots a graph of the raw data, with time (t) on the x-axis and population size (N) on the y.
 
+```{r}
 ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   
   xlab("t") +
   
-  ylab("y") +
+  ylab("N ") +
   
   scale_y_continuous(trans='log10')
-#### 
+```
+Here, we have plotted the graph except with the log transformation of the y-axis. 

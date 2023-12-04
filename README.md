@@ -4,7 +4,7 @@ R scripts for a reproducible analysis of logistic growth
 
 install.packages("dplyr")
 library(dplyr)
-#### The dplyr package enables us to manipulate data via efficient grouping, arranging and transforming
+#### The dplyr package enables us to manipulate data via efficient filtering, grouping and arranging. It will therefore be useful in managing this set of data.
 
 growth_data <- read.csv("experiment1.csv")
 
@@ -16,7 +16,7 @@ model1 <- lm(N_log ~ t, data_subset1)
 
 summary(model1)
 
-#### We are defining the linear model for the first part of the graph (where initial growth is exponential), by filtering the data such that it only includes rows where t is less than 1800. Based on this data, the intercept is 6.903e+00, the gradient is 9.990e-03.
+#### Initially, we are defining the linear model for the first part of the graph (where the growth is exponential), by filtering the data such that it only includes rows where t is less than 1800. Based on this data, the intercept is 6.903e+00, the gradient is 9.990e-03.
 
 # Case 2. N(t) = K
 
@@ -26,5 +26,4 @@ model2 <- lm(N ~ 1, data_subset2)
 
 summary(model2)
 
-#Defining the model according to the plateau
-#
+#### Here, we are defining the linear model according to values of t which exceed 1800, where growth is no longer exponential and begins to plateau

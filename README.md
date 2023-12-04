@@ -20,7 +20,8 @@ model1 <- lm(N_log ~ t, data_subset1)
 summary(model1)
 ```
 We first want to determine estimates for the carrying capacity, initial population size and the population growth rate. We define a linear model for when t is small, and where we expect the growth to be exponential, by filtering the data such that it only includes rows where t is less than 1800 (beyond this point the growth is expected to plateau, based on the raw data). 
-Then, we have mutated the population size (N) data so that it is log transformed, because this results in 2 distinct growth stages - an initial linear growth and a plateau - in order to create 2 separate linear models. We can consequently use these models to estimate growth rates, carrying capacity and population size as they will provide us with estimates of both the gradient and the y-intercept. For example, when t<1800, the intercept is 6.903e+00, the gradient is 9.990e-03.
+
+Then, we have mutated the population (N) to log transform it, because this results in 2 distinct growth stages - an initial increasing linear growth stage and a plateau whereby growth rate is constant - in order to create 2 separate linear models. We can consequently use these models to estimate growth rates, carrying capacity and population size as they will provide us with estimates of both the gradient and the y-intercept. For example, when t<1800, the intercept is 6.903e+00, the gradient is 9.990e-03.
 
 # Case 2. N(t) = K
 ```{r}
@@ -30,7 +31,9 @@ model2 <- lm(N ~ 1, data_subset2)
 
 summary(model2)
 ```
-Next, we want to create a model for the stage of growth where we expect to observe a plateau, hence have filtered the data to only include values of t greater than 1800. We require 2 separate linear models because we predict there to be 2 distinct growth stages, each of which will have a different rate of growth.
+Next, we want to create a model for the stage of growth where we expect to observe a plateau, hence have filtered the data to only include values of t greater than 1800. 
+
+We require 2 separate linear models because we predict there to be 2 distinct growth stages.
 
 
 # Script to plot the logistic growth data

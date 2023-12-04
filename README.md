@@ -88,7 +88,7 @@ r <- 9.990e-03
   
 K <- 5.903e+10
 ```
-After reading in the growth data, we define a function for logistic growth (logistic_fun) which will calculate values of N using the equation for logistic growth, as defined in the code.
+Here we are defining a function for logistic growth (logistic_fun) which we will use to calculate values of N, based on the logistic growth equation.
 
 ```
 ggplot(aes(t,N), data = growth_data) +
@@ -98,4 +98,4 @@ ggplot(aes(t,N), data = growth_data) +
   geom_point()+
   scale_y_continuous(trans='log10')
 ``` 
-#Plotting the model to see how well it fits the data
+#We are then plotting the model to see how well it fits our raw data. 

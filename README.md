@@ -111,7 +111,7 @@ K = 5.903e+10
 
 where N0 = starting population size, r = growth rate and K = carrying capacity.
 
-Upon plotting the logistic growth, using these values we obtained from 
+Having obtained these values from our initial linear models, we can then plot a graph of logistic growth. 
 
 
 # 3. Calculating population size at t=4980

@@ -66,4 +66,4 @@ ggplot(aes(t,N), data = growth_data) +
   
   scale_y_continuous(trans='log10')
 ```
-Here, we have plotted the graph except with the log transformation of the y-axis. 
+Here, we have plotted a graph of the raw data, except with a log transformation of the y-axis. 

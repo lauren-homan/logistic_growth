@@ -9,7 +9,7 @@ library(dplyr)
 ```{r}
 growth_data <- read.csv("experiment1.csv")
 ```
-#### Here we are reading in our data and calling it growth_data
+#### Firstly, we are reading in our data and calling it growth_data
 
 # Case 1. K >> N0, t is small
 ```{r]
@@ -19,7 +19,7 @@ model1 <- lm(N_log ~ t, data_subset1)
 
 summary(model1)
 ```
-#### Initially, we are defining the linear model for the first part of the graph (where the growth is exponential), by filtering the data such that it only includes rows where t is less than 1800. Based on this data, the intercept is 6.903e+00, the gradient is 9.990e-03.
+#### Initially, we are defining the linear model for the first part of the graph (where the growth is exponential), by filtering the data such that it only includes rows where t is less than 1800. Here, we have log transformed the population size (N) data, because this results in 2 distinct growth stages - an initial linear growth and then a plateau. We can consequently use this model to determine initial growth rates, as it will provide us with estimates of both the gradient and the y-intercept. Based on this data, the intercept is 6.903e+00, the gradient is 9.990e-03.
 
 # Case 2. N(t) = K
 ```{r}
@@ -29,7 +29,7 @@ model2 <- lm(N ~ 1, data_subset2)
 
 summary(model2)
 ```
-#### Here, we are defining the linear model according to values of t which exceed 1800, where growth is no longer exponential and begins to plateau. We must filter the data initially because we can then use 2 separate linear models as a representation of the graph 
+#### Here, we are defining the linear model according to values of t which exceed 1800, at which point growth is no longer exponential and begins to plateau. We filter the data initially 
 
 
 # Script to plot the logistic growth data
@@ -39,7 +39,7 @@ growth_data <- read.csv("experiment1.csv")
 install.packages("ggplot2")
 library(ggplot2)
 
-ggplot(aes(t,N), data = ???) +
+ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   
@@ -49,9 +49,9 @@ ggplot(aes(t,N), data = ???) +
   
   theme_bw()
 ```
-#### This chunk of code plots the first gr
+#### This chunk of code plots a graph of our raw data, without a log-transformation on the y-axis. 
 
-ggplot(aes(t,???), data = growth_data) +
+ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   

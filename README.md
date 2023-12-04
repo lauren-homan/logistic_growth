@@ -19,7 +19,8 @@ model1 <- lm(N_log ~ t, data_subset1)
 
 summary(model1)
 ```
-#### Initially, we are defining the linear model for the first part of the graph (where the growth is exponential), by filtering the data such that it only includes rows where t is less than 1800. Here, we have log transformed the population size (N) data, because this results in 2 distinct growth stages - an initial linear growth and then a plateau. We can consequently use this model to determine initial growth rates, as it will provide us with estimates of both the gradient and the y-intercept. Based on this data, the intercept is 6.903e+00, the gradient is 9.990e-03.
+We first want to determine estimates for the carrying capacity, initial population size and the population growth rate. We define a linear model when t is small, and where we expect the growth to be exponential, by filtering the data such that it only includes rows where t is less than 1800. 
+Then, we have log transformed the population size (N) data, because this results in 2 distinct growth stages - an initial linear growth and then a plateau - in order to create 2 separate linear models. We can consequently use this model to determine initial growth rates, as it will provide us with estimates of both the gradient and the y-intercept. When t<1800, the intercept is 6.903e+00, the gradient is 9.990e-03.
 
 # Case 2. N(t) = K
 ```{r}
@@ -49,6 +50,7 @@ ggplot(aes(t,N), data = growth_data) +
   
   theme_bw()
 ```
+#### PLot data
 #### This chunk of code plots a graph of our raw data, without a log-transformation on the y-axis. 
 
 ggplot(aes(t,N), data = growth_data) +
@@ -60,3 +62,4 @@ ggplot(aes(t,N), data = growth_data) +
   ylab("y") +
   
   scale_y_continuous(trans='log10')
+#### 

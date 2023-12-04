@@ -98,4 +98,4 @@ ggplot(aes(t,N), data = growth_data) +
   geom_point()+
   scale_y_continuous(trans='log10')
 ``` 
-#We are then plotting the model to see how well it fits our raw data. 
+We can then plot our logistic model against the raw data to determine how closely our estimates represent the dataset.

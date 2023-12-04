@@ -99,3 +99,28 @@ ggplot(aes(t,N), data = growth_data) +
   scale_y_continuous(trans='log10')
 ``` 
 We can then plot our logistic model against the raw data to determine how closely our estimates represent the dataset.
+
+#### Results
+Our model provides us with the following values:
+
+N0 = 6.903e+00 
+
+r = 9.990e-03
+
+K = 5.903e+10
+
+where N0 = starting population size, r = growth rate and K = carrying capacity.
+
+Upon plotting the logistic growth, using these values we obtained from 
+
+
+# 3. Calculating population size at t=4980
+
+Where population growth rate is exponential, N(t) = N0e^rt
+Substituting in the previous values as defined by our model, this gives 
+N(t) = 6.903e+00e^(9.990e-03 x 4980) = 
+
+For the logistic growth model, defined as N(t) = K ...
+we know that the value of N will be equivalent to the carrying capacity, as this model assumes population growth is limited by the maximum number of individuals the population can support (k), which, in this case = 5.903e+10
+
+

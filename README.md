@@ -88,7 +88,7 @@ r <- 9.990e-03
   
 K <- 5.903e+10
 ```
-fnowef
+After reading in the growth data, we define a function for logistic growth (logistic_fun) which will calculate values of N using the equation for logistic growth, as defined in the code.
 
 ```
 ggplot(aes(t,N), data = growth_data) +

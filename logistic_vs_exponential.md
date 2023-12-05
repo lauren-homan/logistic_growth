@@ -1,3 +1,3 @@
-#Plotting the logistic against the exponential
+# Plotting the logistic against the exponential
 
 

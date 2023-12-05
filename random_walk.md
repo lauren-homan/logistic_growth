@@ -30,7 +30,7 @@ random_walk  <- function (n_steps) {
   
 }
 ```
-This first chunk of code 
+Initially, a dataframe is created containing 3 variables: x, y and time.
 
 ```{r}
 data1 <- random_walk(500)

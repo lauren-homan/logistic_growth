@@ -14,6 +14,7 @@ logistic_fun <- function(t) {
   return(N)
 }
 ```
+These can now be used to plot both functions on the same plot;
 
 ```{r}
 ggplot(data.frame(t = seq(0, 4000)), aes(t)) +
@@ -25,6 +26,6 @@ ggplot(data.frame(t = seq(0, 4000)), aes(t)) +
        y = "N")
 ```
 
-Here, we have created a dataframe for the values of t ranging from 0-4000, and then plotted both the logistic and exponential functions onto the same graph.  
+Here, I have created a dataframe for the values of t ranging from 0-4000. Then, we've plotted both the logistic and exponential functions onto the same graph.  
 
        

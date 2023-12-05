@@ -1,3 +1,4 @@
+# Simulating a random walk
 ```{r}
 #install.packages("ggplot2")
 #install.packages("gridExtra")
@@ -29,6 +30,7 @@ random_walk  <- function (n_steps) {
   
 }
 ```
+This first chunk of code 
 
 ```{r}
 data1 <- random_walk(500)

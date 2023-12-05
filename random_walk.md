@@ -1,4 +1,4 @@
-# Simulating a random walk
+# 1. Simulating a random walk
 ```{r}
 #install.packages("ggplot2")
 #install.packages("gridExtra")
@@ -62,3 +62,8 @@ plot2 <- ggplot(aes(x = x, y = y), data = data2) +
 
 grid.arrange(plot1, plot2, ncol=2)
 ```
+
+
+# 2. Random seeds
+
+A random seed is a method for generating a random number in R, as defined within the dataframe.

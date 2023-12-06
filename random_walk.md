@@ -30,7 +30,7 @@ random_walk  <- function (n_steps) {
   
 }
 ```
-Initially, a dataframe is created containing 3 variables: x, y and time.
+A dataframe is created containing 3 variables: x, y and time. The code simulates a 'random walk' according to x- and y-coordinates
 
 ```{r}
 data1 <- random_walk(500)
@@ -62,6 +62,8 @@ plot2 <- ggplot(aes(x = x, y = y), data = data2) +
 
 grid.arrange(plot1, plot2, ncol=2)
 ```
+
+We have plotted 2 different graphs here, each with 500 steps.
 
 
 # 2. Random seeds

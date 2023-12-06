@@ -1,11 +1,14 @@
 # logistic_growth
 R scripts for a reproducible analysis of logistic growth
-#Script to estimate the model parameters using a linear approximation
+
+Script to estimate the model parameters using a linear approximation
 ```{r}
 install.packages("dplyr")
 library(dplyr)
 ```
+
 The dplyr package enables us to manipulate data via efficient filtering, grouping and arranging. It will therefore be useful in managing this set of data.
+
 ```{r}
 growth_data <- read.csv("experiment1.csv")
 ```

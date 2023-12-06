@@ -26,6 +26,6 @@ ggplot(data.frame(t = seq(0, 4000)), aes(t)) +
        y = "N")
 ```
 
-Here, I have created a dataframe for the values of t ranging from 0-4000. Then, we've plotted both the logistic and exponential functions onto the same graph.  
+Here, I have created a dataframe for the values of t ranging from 0-4000. This enables both the logistic and exponential functions to be plotted between the times 0-4000, but means the raw data itself is not included. 
 
        

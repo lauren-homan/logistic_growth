@@ -63,7 +63,7 @@ plot2 <- ggplot(aes(x = x, y = y), data = data2) +
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
-Here, we have plotted 2 different graphs, each with 500 steps. Due to the random nature of the walks, although both plots are the same the outcome differs for each in terms of the direction taken. Similarly, every time the graphs are plotted the walk itself is different. This is because direction is random with respect to time.
+Here, we have plotted 2 different 'random walk' graphs, each with 500 steps. Despite the fact that both plots use the same code and plot 500 steps, due to the randomness of the walks the graphs appear completely different in terms of the relative patterns of x- and y-coordinates. Similarly, every time the graphs are plotted the walk itself is different. This is because direction is random with respect to time. 
 Time is demonstrated here by use of a colour key - the darker the shade of blue the more time has been spent walking.
 
 

@@ -30,7 +30,7 @@ random_walk  <- function (n_steps) {
   
 }
 ```
-A dataframe is created containing 3 variables: x, y and time. The code simulates a 'random walk' according to x- and y-coordinates
+A dataframe is created containing 3 variables: x, y and time. The code simulates a 'random walk' according to x- and y-coordinates, meaning the 
 
 ```{r}
 data1 <- random_walk(500)
@@ -63,10 +63,11 @@ plot2 <- ggplot(aes(x = x, y = y), data = data2) +
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
-Here, we have plotted 2 different 'random walk' graphs, each with 500 steps. Despite the fact that both plots use the same code and plot 500 steps, due to the randomness of the walks the graphs appear completely different in terms of the relative patterns of x- and y-coordinates. Similarly, every time the graphs are plotted the walk itself is different. This is because direction is random with respect to time. 
+Here, 2 different 'random walk' graphs have been plotted using the ggplot2 function, each with 500 steps. Despite the fact that both plots use the same code and plot 500 steps, due to the randomness of the walks the graphs appear completely different in terms of the patterns of x- and y-coordinates with respect to time. Similarly, when the code is re-run, the plots appear differently, because of the fact that the direction taken is random. This is because direction is random with respect to time. 
 Time is demonstrated here by use of a colour key - the darker the shade of blue the more time has been spent walking.
 
 
 # 2. Random seeds
 
-A random seed is a method for generating a random number in R, as defined within the dataframe.
+A random seed is a method used in R for generating a pseudorandom number. It is an integer vector generated with an algorithm, but requires a 'seed' to initialise. Hence, the number produced is pseudorandom because if you know both the seed and the generator, you can predict and reproduce the outcome. The algorithm random number generator (RNG) mimics the properties of the independent generation of numbers within a distribution in the interval (0,1).
+(information was sourced from r-coder.com)
